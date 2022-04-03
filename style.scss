@@ -1,0 +1,158 @@
+//variables
+$main-color: #D85A5A;
+$font-color: #9E7474;
+
+
+//mixin
+@mixin heading-font($font, $size, $weight) {
+    font-size: $size+rem;
+    @if($font==poppins){
+        font-family: 'Poppins', sans-serif;
+    }@else if($font==raleway){
+        font-family: 'Raleway', sans-serif;
+    }
+    @if($weight==regular){
+        font-weight: 400;
+    }@else if($weight==medium){
+        font-weight: 500;
+    }@else if($weight==bold){
+        font-weight: 700;
+    }
+}
+
+@mixin padding($position, $n) { 
+    @if($position==top){
+        padding-top: $n+rem;
+    }@else if($position==right){
+        padding-right: $n+rem;
+    }@else if($position==left){
+        padding-left: $n+rem;
+    }@else if($position==bottom){
+        padding-bottom: $n+rem;
+    }
+}
+
+@mixin margin($position, $n) { 
+    @if($position==top){
+        margin-top: $n+rem;
+    }@else if($position==right){
+        margin-right: $n+rem;
+    }@else if($position==left){
+        margin-left: $n+rem;
+    }@else if($position==bottom){
+        margin-bottom: $n+rem;
+    }
+}
+
+@mixin buttoms ($cBackground, $cFont){
+    @if($cBackground==red){
+        background-color: $main-color;
+    }@else if($cBackground==white){
+        background-color: white;
+    }@if($cFont==red){
+        color: $main-color;
+    }@else if($cFont==white){
+        color: white;
+    }
+}
+
+
+//extend
+%align{
+    padding-left: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+%buttom-style{
+    font-family: 'Raleway', sans-serif;
+    font-size: .7rem;
+    font-weight: 500;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 1.5rem;
+    border-style: inherit;
+    cursor: pointer;
+}
+
+
+//class
+.left-bar{
+    border-left: 8px solid $main-color;
+    height: 250px;
+    margin-left: 3rem;
+}
+
+.left-buttom{
+    @include buttoms(red, white);
+    @extend %buttom-style;
+    margin-left: 1rem;
+    margin-top: .5rem;
+}
+
+.right-buttom{
+    @include buttoms(white, red);
+    @extend %buttom-style;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 1.5rem;
+}
+
+.arrow{
+   width: 7rem; 
+   @include margin(top, -.9);
+   @include margin(left, 5);
+   cursor: pointer;
+}
+
+.soup{
+    width: 670px;
+    padding-top: 1rem;
+    padding-left: 9rem;
+}
+
+.cart-icon{
+    width: 60px;
+    @include margin(top, 1);
+    cursor: pointer;
+}
+
+h1{
+    @include heading-font(poppins, 1.5, bold);
+    @include padding(left, 5);
+    @include padding(bottom, 1);
+}
+
+h2{
+    @include heading-font(raleway, 2.5, bold);
+    @include padding(top, 1);
+    @extend %align;
+}
+
+h3{
+    @include heading-font(poppins, 1.5, medium);
+    @extend %align;
+}
+
+p{
+    color: $font-color;
+    @include heading-font(raleway, .8, regular);
+    @include padding(left, 1);
+    @include margin(top, .5);
+    line-height : 2.3rem
+}
+
+h4{
+    @include heading-font(raleway, .8, bold);
+    @include padding(left, 1);
+    @include margin(top, 2);
+    @include margin(bottom, -.5);
+}
+
+h5{
+    color: $font-color;
+    @include heading-font(raleway, .8, regular);
+    @include padding(left, 1);
+    @include margin(top, 1);
+    @include margin(bottom, .5);
+}
