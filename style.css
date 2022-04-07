@@ -16,6 +16,14 @@ h3, h2 {
   cursor: pointer;
 }
 
+.display {
+  display: flex;
+}
+
+.width {
+  width: 580px;
+}
+
 .left-bar {
   border-left: 8px solid #D85A5A;
   height: 250px;
@@ -46,13 +54,14 @@ h3, h2 {
 .soup {
   width: 670px;
   padding-top: 1rem;
-  padding-left: 9rem;
+  padding-left: 6rem;
 }
 
 .cart-icon {
   width: 60px;
   margin-top: 1rem;
   cursor: pointer;
+  position: absolute;
 }
 
 h1 {
@@ -103,6 +112,108 @@ h5 {
   padding-left: 1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    padding-left: 2rem;
+    padding-bottom: 0rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    padding-top: 0rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+
+  p {
+    color: #9E7474;
+    font-size: 0.7rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    line-height: 1.5rem;
+  }
+
+  h4 {
+    font-size: 0.6rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: -0.5rem;
+  }
+
+  h5 {
+    color: #9E7474;
+    font-size: 0.6rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .display {
+    display: inline;
+    align-items: center;
+  }
+
+  .width {
+    width: 350px;
+  }
+
+  .left-bar {
+    border-left: 8px solid #D85A5A;
+    height: 180px;
+    margin-left: 1rem;
+  }
+
+  .left-buttom {
+    background-color: #D85A5A;
+    color: white;
+    margin-left: 0rem;
+    margin-top: 0.5rem;
+  }
+
+  .right-buttom {
+    background-color: white;
+    color: #D85A5A;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 0rem;
+  }
+
+  .soup {
+    width: 310px;
+    padding-left: 0rem;
+    margin-top: 13rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-icon {
+    width: 50px;
+    margin-top: 1rem;
+    cursor: pointer;
+    margin-top: 13rem;
+  }
+
+  .arrow {
+    width: 6rem;
+    margin-top: -0.9rem;
+    margin-left: 5rem;
+    cursor: pointer;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

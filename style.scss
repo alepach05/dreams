@@ -78,6 +78,14 @@ $font-color: #9E7474;
 
 
 //class
+.display{
+    display: flex;
+}
+
+.width{
+    width: 580px;
+}
+
 .left-bar{
     border-left: 8px solid $main-color;
     height: 250px;
@@ -108,13 +116,14 @@ $font-color: #9E7474;
 .soup{
     width: 670px;
     padding-top: 1rem;
-    padding-left: 9rem;
+    padding-left: 6rem;
 }
 
 .cart-icon{
     width: 60px;
     @include margin(top, 1);
     cursor: pointer;
+    position: absolute;
 }
 
 h1{
@@ -155,4 +164,97 @@ h5{
     @include padding(left, 1);
     @include margin(top, 1);
     @include margin(bottom, .5);
+}
+
+//Mobile
+@media (max-width: 500px) {
+    h1{
+        @include heading-font(poppins, 1.5, bold);
+        @include padding(left, 2);
+        @include padding(bottom, 0);
+    }
+    
+    h2{
+        @include heading-font(raleway, 2, bold);
+        @include padding(top, 0);
+        @extend %align;
+    }
+    
+    h3{
+        @include heading-font(poppins, 1, medium);
+        @extend %align;
+    }
+    
+    p{
+        color: $font-color;
+        @include heading-font(raleway, .7, regular);
+        @include padding(left, 1);
+        @include margin(top, .5);
+        line-height : 1.5rem;
+    }
+    
+    h4{
+        @include heading-font(raleway, .6, bold);
+        @include padding(left, 1);
+        @include margin(top, 2);
+        @include margin(bottom, -.5);
+    }
+    
+    h5{
+        color: $font-color;
+        @include heading-font(raleway, .6, regular);
+        @include padding(left, 1);
+        @include margin(top, 1);
+        @include margin(bottom, .5);
+    } 
+
+    .display{
+        display: inline;
+        align-items: center;
+    }
+
+    .width{
+        width: 350px;
+    }
+
+    .left-bar{
+        border-left: 8px solid $main-color;
+        height: 180px;
+        margin-left: 1rem;
+    }
+
+    .left-buttom{
+        @include buttoms(red, white);
+        @extend %buttom-style;
+        margin-left: 0rem;
+        margin-top: .5rem;
+    }
+    
+    .right-buttom{
+        @include buttoms(white, red);
+        @extend %buttom-style;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        margin-left: 0rem;
+    }
+
+    .soup{
+        width: 310px;
+        padding-left: 0rem;
+        margin-top: 13rem;
+        margin-bottom: .5rem;
+    }
+
+    .cart-icon{
+        width: 50px;
+        @include margin(top, 1);
+        cursor: pointer;
+        margin-top: 13rem;
+    }
+
+    .arrow{
+        width: 6rem; 
+        @include margin(top, -.9);
+        @include margin(left, 5);
+        cursor: pointer;
+     }
 }
